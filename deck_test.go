@@ -96,14 +96,14 @@ func TestJokerDeck(t *testing.T) {
 func TestInvalidDeck(t *testing.T) {
 	is := is.New(t)
 
-	var JokerDeck = Type{
+	var InvalidDeck = Type{
 		Name:     "Invalid",
 		Suites:   []uint8{99},
 		Values:   []uint8{99},
 		InitFunc: GenerateCards,
 	}
 
-	d := Deck{Type: JokerDeck}
+	d := Deck{Type: InvalidDeck}
 	d.Reset()
 	c, _ := d.Deal()
 	is.Equal("??", c.String())
