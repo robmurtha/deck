@@ -1,9 +1,8 @@
 package deck
 
 import (
-	"testing"
-
 	"strings"
+	"testing"
 
 	"github.com/cheekybits/is"
 )
@@ -98,14 +97,14 @@ func TestInvalidDeck(t *testing.T) {
 	is := is.New(t)
 
 	var JokerDeck = Type{
-		Name:   "Invalid",
-		Suites: []uint8{99},
-		Values: []uint8{99},
+		Name:     "Invalid",
+		Suites:   []uint8{99},
+		Values:   []uint8{99},
 		InitFunc: GenerateCards,
 	}
 
 	d := Deck{Type: JokerDeck}
 	d.Reset()
-	c,_ := d.Deal()
- 	is.Equal("??",c.String())
+	c, _ := d.Deal()
+	is.Equal("??", c.String())
 }
